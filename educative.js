@@ -26,16 +26,50 @@ function EmployeeConstructor(_name,_age,_designation) {
 //The object created is stored in the variable employeeObj
 var employeeObj = new EmployeeConstructor('Joe',22,'Developer')
 
-console.log('EMPLOYEE-OBJ');
-console.log(employeeObj);
+// console.log('EMPLOYEE-OBJ');
+// console.log(employeeObj);
 
-console.log('CONSTRUCTOR FUNCTION');
-console.log(EmployeeConstructor.prototype);
+// console.log('CONSTRUCTOR FUNCTION');
+// console.log(EmployeeConstructor.prototype);
 
-console.log('adding a property: ');
+// console.log('adding a property: ');
 
-EmployeeConstructor.prototype.company = 'Google';
 
-const em = new EmployeeConstructor('a', 12, 'Kid');
+// const em = new EmployeeConstructor('Anna', 12, 'Kid');
 
-console.log(em.company);
+// EmployeeConstructor.prototype.company = 'Google';
+// EmployeeConstructor.prototype.getCompany = function (){
+//  return this.company;
+
+// }
+
+// console.log(em.getCompany());
+
+
+
+//DATE ENCAPSULATATION
+
+//constructor function called Employee
+function Employee(name, age, designation){
+  var _name = name
+  var _age = age
+  var _designation = designation
+
+  //accessing the date using functions
+  this.getName = function(){
+    return _name;
+  }
+
+  //setting a new value
+  this.setAge = function(newAge){
+    _name = newAge;
+  }
+}
+var employeeObj = new Employee('Joe',20,'Chef')
+//accessing properties outside
+console.log(employeeObj._name);
+console.log(employeeObj._age);
+console.log(employeeObj._designation);
+console.log(employeeObj.getName());
+console.log(employeeObj.setAge('John'));
+console.log(employeeObj.getName());
