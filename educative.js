@@ -170,10 +170,86 @@ let today = new Date('2021-02-17');
 let yesterday = new Date('2021-01-27');
 
 if( +today > +yesterday){
-  console.log("today");
+  // console.log("today");
 }else{
-  console.log("yesterday");
+  // console.log("yesterday");
 }
 
-console.log(today);
-console.log(yesterday);
+
+
+
+
+
+
+
+
+
+
+/* 
+In this exercise, you have to implement inheritance in between classes in the ES6 version of JavaScript.
+
+Task 1 #
+The base class Vehicle is declared below. You have to define its constructor. The constructor should contain:
+
+Protected values _speed and _model.
+
+Methods getModel and getSpeed which return the protected speed and model values.
+
+Task 2 #
+The child class Car is also declared. You have to:
+
+Modify its declaration such that it extends the Vehicle class.
+
+Define and initialize its constructor.
+
+Implement a function setDetails(name) which takes a string name and sets it as the name of the Car.
+
+Implement a function getDetails(carName) which takes a string carName and appends it with the model and speed of the car. It should store the final result in a variable and return it.
+*/
+
+
+
+
+// Base Class
+class Vehicle {
+
+  constructor(speed,model){
+   var _speed = speed
+   var _model = model
+   this.getModel = function(){
+     return _model
+   }
+   this.getSpeed = function(){
+     return _speed
+   }
+  }  
+}
+
+// Derived Class
+class Car extends Vehicle {
+  constructor(speed,model){
+    super(speed,model)
+    
+  }
+  
+  // This function sets the name of the car
+  // setDetails(name) { // Setter Function
+  //   this.name = name;
+  // }
+
+  // This function calls the Base class functions and appends the result with the input 
+  getDetails(carName) {
+		var details = carName + ", " + this.getModel() + ", " + this.getSpeed(); // calling Base Class Function
+		return details;
+  }   
+
+  
+}
+
+let car = new Car(100, 'X');
+
+console.log(car.getDetails('Tesla'));
+
+
+
+
