@@ -73,3 +73,37 @@ console.log(employeeObj._designation);
 console.log(employeeObj.getName());
 console.log(employeeObj.setAge('John'));
 console.log(employeeObj.getName());
+
+
+/*
+Exam question:
+Get & Set
+Study the code given below, which option correctly shows the output?
+*/
+
+// var op = {
+//   arr : [2,4,8,9],
+//   get last(){
+//       return this.arr[this.arr.length - 1];
+//   },
+//   set lastVal(val){
+//       this.arr[this.arr.length - 1] = val;
+//   }
+// }
+// op.lastVal = 15;
+// console.log(op.last);
+
+
+
+function Parallelogram(base, height){
+  //write your code here 
+  this.base = base,
+  this.height = height
+
+  this.printArea = function(){
+      return this.base * this.height;
+  }
+}
+
+var parallelogram = new Parallelogram(4,5);
+console.log(parallelogram.printArea());
